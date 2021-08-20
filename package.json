@@ -4,7 +4,8 @@
   "description": "Sample nodejs web server with user profiles data processing. ",
   "type": "module",
   "scripts": {
-    "start": "nodemon"
+    "start": "nodemon",
+    "lint": "eslint src/"
   },
   "keywords": [
     "nodejs",
@@ -21,6 +22,12 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
-    "@types/node": "^16.6.2"
+    "@types/node": "^16.6.2",
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^4.29.2",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-airbnb-typescript": "^13.0.0",
+    "eslint-plugin-import": "^2.24.1"
   }
 }
