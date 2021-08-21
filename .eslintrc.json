@@ -21,6 +21,7 @@
   ],
   "rules": {
     "import/extensions": "off",
+    "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
     "no-console": "warn",
     "max-len": ["warn", { "code": 120 }],
