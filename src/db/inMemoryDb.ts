@@ -1,4 +1,5 @@
 import { IUser } from '../users/user.model.js';
+import NotFoundError from '../errors/NotFoundError.js';
 
 type TableNames = 'Users';
 type TableTypes = IUser | undefined;
@@ -16,7 +17,7 @@ const getAllEntities = (tableName: TableNames): TableTypes[] => db[tableName];
 const getEntity = (tableName: TableNames, id: string): TableTypes => {
   const entity = db[tableName].filter((item) => item?.id === id);
   if (!entity.length) {
-    throw new Error(`Entity ${id} was not found`);
+    throw new NotFoundError(`Entity ${id} was not found`);
   }
   return entity[0];
 };
