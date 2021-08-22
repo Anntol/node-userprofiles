@@ -3,6 +3,7 @@ import statusCodes from 'http-status-codes';
 
 import * as usersService from './user.service.js';
 import multerMw from '../middleware/multer.js';
+import savePhoto from '../helpers/savePhoto.js';
 
 const router = express.Router();
 router.route('/').get(
@@ -26,9 +27,9 @@ router.post('/', multerMw,
       throw Error('No photo file!');
     }
     
-    req.body.photoUrl = req.file.path;
+    req.body.photoUrl = await savePhoto(req.file);
     const newUser = await usersService.add(req.body);
-    res.status(statusCodes.CREATED).send(newUser);
+    res.status(statusCodes.CREATED).send(newUser.id);
   },
 );
 
