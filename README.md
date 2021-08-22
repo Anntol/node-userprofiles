@@ -17,8 +17,20 @@ git clone {repository URL}
 npm install
 ```
 
+## Environment variables
+
+You can specify your environment variables in .env file.
+
 ## Running application
 
 ```
 npm start
 ```
+
+## REST Endpoints
+
+Type | Route | Explanation
+---- | ----- | -----
+Post |  /users    |  Create user profile
+Get  |  /users    |  Get all user profiles
+Get  |  /users/id |  Get user profile by id
