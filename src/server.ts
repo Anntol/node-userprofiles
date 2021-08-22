@@ -1,7 +1,8 @@
 import express from 'express';
+import config from './common/config.js';
 import userRouter from './users/user.router.js';
 
-const PORT = process.env['PORT'] || 5000;
+const PORT = config.PORT || 5000;
 
 const app = express();
 app.use(express.json());
